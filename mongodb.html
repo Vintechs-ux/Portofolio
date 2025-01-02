@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB - Portfolio Modern</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navbar dengan efek glass morphism -->
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-center items-center">
+            <div class="nav-links flex space-x-4">
+                <a href="/index.html#home" class="nav-item">Home</a>
+                <a href="/index.html#about" class="nav-item">About</a>
+                <a href="/index.html#projects" class="nav-item">Projects</a>
+                <a href="/index.html#contact" class="nav-item">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MongoDB Information Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">MongoDB</h2>
+            
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Information Column -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Apa itu MongoDB?</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            MongoDB adalah database NoSQL yang dirancang untuk menyimpan data dalam format dokumen yang fleksibel.
+                            Database ini menggunakan format BSON (Binary JSON) yang memungkinkan penyimpanan data yang lebih kompleks
+                            dan dinamis.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Skema fleksibel dan dinamis</li>
+                            <li>Skalabilitas horizontal yang mudah</li>
+                            <li>Performa query yang tinggi</li>
+                            <li>Dukungan untuk data terstruktur dan tidak terstruktur</li>
+                        </ul>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Use Cases</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">Content Management</h4>
+                                <p class="text-sm text-gray-600">Ideal untuk CMS dengan struktur data yang dinamis</p>
+                            </div>
+                            <div class="p-4 bg-green-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">Real-time Analytics</h4>
+                                <p class="text-sm text-gray-600">Pemrosesan dan analisis data real-time</p>
+                            </div>
+                            <div class="p-4 bg-purple-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">Mobile Applications</h4>
+                                <p class="text-sm text-gray-600">Backend untuk aplikasi mobile modern</p>
+                            </div>
+                            <div class="p-4 bg-yellow-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">IoT Solutions</h4>
+                                <p class="text-sm text-gray-600">Penyimpanan data dari perangkat IoT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Column -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <!-- Key Features -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Key Features</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Document-Oriented</h4>
+                                    <p class="text-gray-600">Menyimpan data dalam format dokumen yang fleksibel dan mudah dipahami</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Distributed Database</h4>
+                                    <p class="text-gray-600">Mendukung distribusi data across multiple servers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Getting Started -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Getting Started</h3>
+                        <div class="bg-gray-800 p-4 rounded-lg mb-4">
+                            <code class="text-green-400">
+                                $ npm install mongodb<br>
+                                $ mongod --dbpath /data/db<br>
+                                $ mongo
+                            </code>
+                        </div>
+                        <a href="index.html#skills" class="btn primary inline-block">Kembali ke Skills</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Portfolio Modern. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html> 

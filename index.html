@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Modern</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navbar dengan efek glass morphism -->
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-center items-center">
+            <div class="nav-links flex space-x-4">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section dengan parallax -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Hi, I'm <span class="highlight">Raditya Barumalang</span></h1>
+            <p class="typing-text">I'm a Professional Developer</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary">Hire Me</a>
+                <a href="#projects" class="btn secondary">See My Work</a>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">About Me</h2>
+            
+            <!-- Profile Section -->
+            <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <img src="./img/Radit.jpg" alt="Profile" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto"> <!-- Ukuran foto diperkecil -->
+                </div>
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        Saya adalah seorang developer muda yang memiliki keterampilan kuat dalam pengembangan web,
+                        siap untuk memberikan kontribusi dan belajar lebih banyak di dunia industri.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#contact" class="btn primary">Hubungi Saya</a>
+                        <a href="#" class="btn secondary">Download CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <a href="nodejs.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left">
+                    <img src="nodejs.png" alt="Node.js" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">Node.js</h3>
+                    <p class="text-center text-gray-600">Platform JavaScript untuk membangun aplikasi jaringan yang cepat dan scalable.</p>
+                </a>
+
+                <a href="express.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left" data-aos-delay="200">
+                    <img src="ex.png" alt="Express" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">Express</h3>
+                    <p class="text-center text-gray-600">Framework minimalis untuk Node.js yang membantu membangun aplikasi web dan API.</p>
+                </a>
+
+                <a href="mongodb.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left" data-aos-delay="400">
+                    <img src="dbm.png" alt="MongoDB" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">MongoDB</h3>
+                    <p class="text-center text-gray-600">Database NoSQL yang fleksibel dan scalable untuk aplikasi modern.</p>
+                </a>
+
+                <a href="html.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left" data-aos-delay="600">
+                    <img src="html.png" alt="HTML" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">HTML</h3>
+                    <p class="text-center text-gray-600">Bahasa markup standar untuk membuat halaman web.</p>
+                </a>
+
+                <a href="css.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left" data-aos-delay="800">
+                    <img src="css.png" alt="CSS" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">CSS</h3>
+                    <p class="text-center text-gray-600">Bahasa untuk mendesain tampilan halaman web.</p>
+                </a>
+
+                <a href="tailwind.html" class="skill-card transform transition duration-500 hover:scale-110 hover:shadow-2xl bg-white rounded-lg p-6" data-aos="flip-left" data-aos-delay="1000">
+                    <img src="tailwind.jpeg" alt="Tailwind" class="tech-logo mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-center">Tailwind</h3>
+                    <p class="text-center text-gray-600">Framework CSS yang memberikan fleksibilitas dalam mendesain UI.</p>
+                </a>
+
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="text-4xl font-bold text-center mb-16 relative pb-4" data-aos="fade-up">
+            My Projects
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary-color"></span>
+        </h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="zoom-in">
+                <img src="./projects/akhuds_home.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>Akhuds_</h3>
+                    <p>Toko online Akhuds adalah toko baju dengan fitur admin panel , 
+                        desain yang menarik dengan tambahan animasi.</p>
+                <a href="project.html" class="btn">View Project</a>
+                </div>
+            </div>
+            <!-- Add more project cards -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="text-4xl font-bold text-center mb-16 relative pb-4 text-white" data-aos="fade-up">
+            Get In Touch
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-accent-color"></span>
+        </h2>
+        <div class="contact-container">
+            <form class="contact-form" data-aos="fade-right">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+            <div class="contact-info" data-aos="fade-left">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>radityabarumalang@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+6282139424856</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-component"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="/components/loadComponents.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
