@@ -1,7 +1,24 @@
 // Initialize AOS
 AOS.init({
-    duration: 1000,
-    once: true
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50
+});
+
+// Animasi progress bar saat card muncul dalam viewport
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.progress-bar').style.animation = 'progressFill 1.5s ease-out forwards';
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+document.querySelectorAll('.skill-card').forEach(card => {
+    observer.observe(card);
 });
 
 // Typing effect
@@ -64,25 +81,14 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Navbar scroll
+// Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + navbar.offsetHeight;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            // Cek ID section untuk menentukan warna navbar
-            if (section.id === 'home' || section.id === 'contact') {
-                navbar.classList.remove('dark');
-            } else {
-                navbar.classList.add('dark');
-            }
-        }
-    });
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
 document.querySelectorAll('.nav-item').forEach(item => {
