@@ -11,5 +11,5 @@ async function loadComponent(elementId, componentPath) {
 
 // Memuat semua komponen saat halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('footer-component', './components/footer.html');
+    loadComponent('footer-component', './Portofolio/components/footer.html');
 }); 
