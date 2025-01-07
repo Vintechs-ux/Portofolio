@@ -129,6 +129,15 @@ body {
     transform: translateY(-3px);
 }
 
+.about-img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar container */
+    height: auto; /* Mempertahankan proporsi gambar */
+    object-fit: cover; /* Menjaga gambar tetap rapi */
+    max-height: 300px; /* Batasi tinggi maksimum gambar */
+    margin: 0 auto; /* Pusatkan gambar */
+}
+
+
 /* Skill Cards */
 .skills-container {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4;
