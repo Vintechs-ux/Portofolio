@@ -18,8 +18,15 @@
     <div class="content-wrapper">
         <!-- Navbar -->
         <nav class="navbar">
-            <div class="container mx-auto flex justify-center items-center">
-                <div class="nav-links flex space-x-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <div class="nav-links">
                     <a href="./../index.html#home" class="nav-item">Home</a>
                     <a href="./../index.html#about" class="nav-item">About</a>
                     <a href="./../index.html#projects" class="nav-item">Projects</a>
@@ -184,10 +191,29 @@
     <!-- Scripts -->
     <script src="/vintechs-ux.github.io/Portfolio/components/loadComponents.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./../script.js"></script>
     <script>
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

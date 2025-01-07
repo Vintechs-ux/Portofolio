@@ -19,16 +19,16 @@ body {
     color: var(--text-color);
 }
 
-/* Navbar Styles */
+/* Navbar Styles - Updated */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
@@ -40,23 +40,22 @@ body {
 }
 
 .nav-links {
-    position: relative;
     display: flex;
     gap: 2.5rem;
+    align-items: center;
 }
 
 .nav-item {
-    color: #1E293B;
+    color: #374151;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 1rem 0;
     font-weight: 500;
     position: relative;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-item:hover {
-    color: #3B82F6;
-    transform: translateY(-2px);
+    color: #2563eb;
 }
 
 .nav-item::after {
@@ -129,14 +128,28 @@ body {
     transform: translateY(-3px);
 }
 
+/* Profile Image - dengan spesifisitas lebih tinggi */
+.about-section .about-img,
+.about .about-img,
 .about-img {
-    max-width: 100%; /* Pastikan gambar tidak melebihi lebar container */
-    height: auto; /* Mempertahankan proporsi gambar */
-    object-fit: cover; /* Menjaga gambar tetap rapi */
-    max-height: 300px; /* Batasi tinggi maksimum gambar */
-    margin: 0 auto; /* Pusatkan gambar */
+    width: 250px !important;  /* Ukuran lebih kecil */
+    height: 250px !important; /* Sama dengan width */
+    border-radius: 50% !important; /* Memastikan bentuk lingkaran */
+    object-fit: cover !important;
+    object-position: center !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0 auto; /* Memastikan gambar di tengah */
+    display: block; /* Memastikan margin auto bekerja */
 }
 
+/* Container untuk memastikan posisi gambar */
+.about-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
 
 /* Skill Cards */
 .skills-container {
@@ -497,32 +510,48 @@ body {
     width: 150px;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Baru */
 .hamburger {
     display: none;
+    flex-direction: column;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 4px;
+    z-index: 1001;
 }
 
 .hamburger span {
     display: block;
     width: 25px;
     height: 3px;
-    background: white;
-    margin: 5px 0;
+    background: #1E293B;
+    margin: 4px 0;
     transition: all 0.3s ease;
 }
 
-/* Media Queries untuk Responsivitas */
+/* Media Queries untuk Mobile */
 @media screen and (max-width: 768px) {
-    /* Navbar */
-    .navbar {
-        padding: 1rem 2rem;
-    }
-    
     .hamburger {
-        display: block;
-        z-index: 1001;
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.5s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -537,58 +566,15 @@ body {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: var(--primary-color);
+    .navbar {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        transition: 0.5s ease;
-        z-index: 1000;
+        padding: 1rem 2rem;
     }
 
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        margin: 1.5rem 0;
+    .nav-item {
         font-size: 1.2rem;
-    }
-
-    /* Hero Section */
-    .hero-content h1 {
-        font-size: 2rem;
-        padding: 0 1rem;
-    }
-
-    .typing-text {
-        font-size: 1.2rem;
-    }
-
-    /* Contact Section */
-    .contact-container {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .contact-form {
-        order: 2;
-    }
-
-    .contact-info {
-        order: 1;
-        margin-bottom: 2rem;
-    }
-
-    .info-item {
-        padding: 1rem;
-        margin-bottom: 1rem;
     }
 }
 
@@ -791,97 +777,79 @@ body {
     z-index: 0;
 }
 
-/* About Section - Background dengan Kombinasi Warna yang Lebih Hidup */
-#about {
-    background: 
-        linear-gradient(120deg, 
-            rgba(255, 255, 255, 0.95),
-            rgba(224, 242, 254, 0.95),
-            rgba(186, 230, 253, 0.95)
-        ),
-        linear-gradient(60deg,
-            rgba(147, 197, 253, 0.1) 0%,
-            rgba(96, 165, 250, 0.1) 50%,
-            rgba(59, 130, 246, 0.1) 100%
-        );
-    position: relative;
-    overflow: hidden;
-}
-
-#about::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(147, 197, 253, 0.1) 0%, transparent 50%);
-    mix-blend-mode: soft-light;
-}
-
-#about::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-        linear-gradient(45deg, 
-            rgba(219, 234, 254, 0.3) 0%,
-            transparent 100%
-        );
-    pointer-events: none;
-}
-
-/* Background dengan gradasi yang lebih jelas */
+/* About Section - Background baru dengan kombinasi putih dan biru laut tua */
 .elegant-gradient {
     position: relative;
     background: 
-        linear-gradient(135deg, 
-            #ffffff 0%, 
-            #e0f7fa 50%,  /* Warna biru muda */
-            #b3e5fc 100%  /* Warna biru lebih pekat */
-        );
+        linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%), /* Gradasi dari putih ke biru muda */
+        radial-gradient(circle at top left, #0077b6 0%, transparent 60%), /* Biru laut tua */
+        radial-gradient(circle at bottom right, #0096c7 0%, transparent 60%); /* Biru laut yang lebih cerah */
     padding: 4rem 0;
 }
 
-/* Menambahkan pattern dengan opacity lebih tinggi */
+/* Pattern overlay dengan warna yang lebih halus */
 .elegant-gradient::before {
     content: '';
     position: absolute;
     inset: 0;
+    opacity: 0.2; /* Lebih halus */
     background-image: 
-        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(147, 197, 253, 0.2) 0%, transparent 50%);
-    opacity: 0.3;
+        linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.2) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.2) 75%);
+    background-size: 20px 20px;
+    pointer-events: none;
 }
 
-/* Menambahkan layer gradasi tambahan */
-.elegant-gradient::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-        linear-gradient(45deg, rgba(37, 99, 235, 0.1) 0%, transparent 100%),
-        repeating-linear-gradient(45deg, 
-            rgba(59, 130, 246, 0.05) 0px,
-            rgba(59, 130, 246, 0.05) 1px,
-            transparent 1px,
-            transparent 10px
-        ),
-        repeating-linear-gradient(-45deg,
-            rgba(96, 165, 250, 0.05) 0px,
-            rgba(96, 165, 250, 0.05) 1px,
-            transparent 1px,
-            transparent 10px
-        );
+/* Memastikan konten tetap di atas background */
+.elegant-gradient > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Menghapus efek floating shapes yang berat */
+.elegant-gradient::before,
+.elegant-gradient::after,
+.floating-shapes {
+    display: none;
+}
+
+/* Memperbaiki tombol hubungi saya */
+.btn.primary {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn.primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Profile section enhancement */
+.about-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 300px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .section-wrapper {
     position: relative;
     z-index: 1;
-    overflow: hidden;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 /* Floating shapes dengan warna lebih kuat */
@@ -912,4 +880,16 @@ body {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     bottom: 10%;
     right: 10%;
-} 
+}
+
+/* Untuk memastikan navbar tetap responsif */
+@media (max-width: 768px) {
+    .nav-links {
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+}
+ 

@@ -14,8 +14,15 @@
    
     <!-- Navbar dengan efek glass morphism -->
     <nav class="navbar">
-        <div class="container mx-auto flex justify-center items-center">
-            <div class="nav-links flex space-x-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Hamburger Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-links">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#about" class="nav-item">About</a>
                 <a href="#projects" class="nav-item">Projects</a>
@@ -46,7 +53,7 @@
             <!-- Profile Section -->
             <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
                 <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <img src="./img/Radits.jpg" alt="Profile" class="about-img rounded-2xl shadow-xl"> <!-- Ukuran foto diperkecil -->
+                    <img src="./img/Radit.jpg" alt="Profile" class="about-img rounded-2xl shadow-xl"> <!-- Ukuran foto diperkecil -->
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
                     <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
@@ -55,7 +62,7 @@
                         siap untuk memberikan kontribusi dan belajar lebih banyak di dunia industri.
                     </p>
                     <div class="flex gap-4">
-                        <button class="btn primary" disabled>Hubungi Saya</button>
+                        <a href="https://wa.me/6282139424856" class="btn primary hover:bg-blue-600 transition-colors duration-300">Hubungi saya</a>
                     </div>
                 </div>
             </div>
